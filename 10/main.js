@@ -4,7 +4,6 @@ function executar(e) {
   let titulo = document.forms["form"]["titulo"].value;
   let autor = document.forms["form"]["autor"].value;
   let acao = document.getElementsByName("acao");
-
   let acaoEscolhida = "";
 
   for (let i = 0; i < acao.length; i++) {
