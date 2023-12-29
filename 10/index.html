@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <form name="form" action="./10.php" method="get">
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo">
+        <br>
+        <label for="autor">Autor:</label>
+        <input type="text" name="autor">
+        <br>
+        <p>Escolha a ação que você gostaria de executar:</p>
+        <input type="radio" name="acao" value="emprestar">
+        <label for="1">Emprestar</label>
+        <br>
+        <input type="radio" name="acao" value="devolver">
+        <label for="2">Devolver</label>
+        <br>
+        <input type="radio" name="acao" value="verificar">
+        <label for="3">Verificar</label>
+        <br>
+        <input type="submit" onclick="executar(e)">
+    </form>    
+</body>
+</html>
