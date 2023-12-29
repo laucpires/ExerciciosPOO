@@ -2,14 +2,16 @@
 
 include "./Paciente.php";
 
-if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["nome"]) && isset($_GET["idade"]) && isset($_GET["historicoConsultas"])) {
-    $paciente = new Paciente($_GET["nome"], $_GET["idade"], $_GET["historicoConsultas"]);
+if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["nome"]) && isset($_GET["idade"])) {
+    $paciente = new Paciente($_GET["nome"], $_GET["idade"]);
 
-    $paciente->addNovaConsulta("Consulta 1");
-    $paciente->addNovaConsulta("Consulta 2");
+    $paciente->addNovaConsulta($_GET["consulta"]);
+    $paciente->addNovaConsulta("Dentista");
 
-    $consultas = $paciente->consultasRealizadas();
-    foreach ($consultas as $consulta) {
-        echo $consulta . "<br>";
+    foreach ($paciente->historicoConsultas as $consulta)
+    {
+        echo $consulta . "\n";
     }
+} else {
+    echo "Faltam informações.";
 }
