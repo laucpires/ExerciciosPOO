@@ -8,11 +8,11 @@ class Paciente {
     public $idade;
     public $historicoConsultas;
 
-    public function __construct($nome, $idade, $historicoConsultas = [])
+    public function __construct($nome, $idade)
     {
         $this->nome = $nome;
         $this->idade = $idade;
-        $this->historicoConsultas = $historicoConsultas;
+        $this->historicoConsultas = [];
     }
 
     public function addNovaConsulta($nomeConsulta)
@@ -22,6 +22,8 @@ class Paciente {
 
     public function consultasRealizadas()
     {
-        return $this->historicoConsultas;
+        foreach ($this->historicoConsultas as $consulta) {
+            echo $consulta;
+        }
     }
 }
